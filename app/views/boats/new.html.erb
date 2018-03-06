@@ -3,12 +3,15 @@
 
 <%= simple_form_for(@boat) do |f| %>
     <%= f.input :make %>
-    <%= f.input :year %>
+    <%= f.input :year, collection: (1880..2020) %>
     <%= f.input :model %>
     <%= f.input :capacity %>
     <%= f.input :location %>
-    <%= f.input :boat_type %>
+    <%= f.input :boat_type, collection: ["Power", "Sail"] %>
     <%= f.input :price %>
+    <%= f.input :photo, crop: :fill %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit %>
 <% end %>
 
 <%= link_to "Back", root_path, class: "btn btn-primary" %>
