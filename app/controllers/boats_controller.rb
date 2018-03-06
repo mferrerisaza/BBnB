@@ -32,7 +32,6 @@ class BoatsController < ApplicationController
     redirect_to dashboard_path
   end
 
->>>>>>> master
   private
 
   def boat_params
