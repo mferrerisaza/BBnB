@@ -4,6 +4,10 @@ class BoatsController < ApplicationController
     @boats = Boat.all
   end
 
+  def show
+    @boat = Boat.find(params[:id])
+  end
+
   def new
     @boat = Boat.new
   end
@@ -12,12 +16,23 @@ class BoatsController < ApplicationController
     @boat = Boat.new(boat_params)
     @boat.user = current_user
     if @boat.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render 'new'
     end
   end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+   @boat = Boat.find(params[:id])
+    @boat.update(boat_params)
+    redirect_to dashboard_path
+  end
+
+>>>>>>> master
   private
 
   def boat_params
