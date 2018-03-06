@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'boats#index'
 
-  resources :boats, only: [:index, :show, :new, :create, :edit, :update]
-
+  resources :boats
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
