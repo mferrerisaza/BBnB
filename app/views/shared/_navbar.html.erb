@@ -4,8 +4,12 @@
     <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Button to list new boat -->
+    <%= link_to "List my Boat", new_boat_path, class: "btn btn-primary" %>
 
     <% if user_signed_in? %>
 
