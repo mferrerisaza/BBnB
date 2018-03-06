@@ -1,0 +1,22 @@
+<div class="outsidebox">
+
+  <div class="textbox">
+    <h1><%= @boat.make %></h1>
+    <ul>
+      <li>Owner: <%= @boat.user.profile.name %></li>
+      <li>Model: <%= @boat.model %></li>
+      <li>Type: <%= @boat.boat_type %></li>
+      <li>Capacity (people): <%= @boat.capacity %></li>
+      <li>Registration Year: <%= @boat.year %></li>
+      <li>Location: <%= @boat.location %></li>
+      <li>Price per day (€): <%= @boat.price %></li>
+
+    </ul>
+  </div>
+
+  <div>
+    <img id="boat-pic" src="<%= @boat.photo %>" alt="Your boat">
+  </div>
+
+</div>
+
