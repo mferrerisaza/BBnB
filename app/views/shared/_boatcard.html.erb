@@ -12,5 +12,10 @@
     <p class="more-info">
       <%= link_to "More info", boat_path(b) %>
     </p>
+    <% if current_user.boats.include? b %>
+      <%= link_to boat_path(b), method: :delete do %>
+        <i class='fa fa-trash'></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
