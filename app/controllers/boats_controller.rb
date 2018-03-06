@@ -14,6 +14,15 @@ def create
   end
 end
 
+def edit
+  @boat = current_user.boat
+end
+
+def update
+  @boat = current_user.boat
+  boat.update(boat_params)
+  redirect_to boat_path(@boat)
+end
 
 def boat_params
   params.require(:boat).permit(:make, :year, :model, :capacity,:location, :boat_type, :price, :photo)
