@@ -34,10 +34,11 @@ class BoatsController < ApplicationController
 
   def destroy
   # fetch boat to destroy from DB
-    boat = Boat.find(params[:id])
+    @boat = Boat.find(params[:id])
+    authorize @boat
 
     # destroy record
-    boat.destroy
+    @boat.destroy
 
     # redirect to index
     redirect_to dashboard_path
