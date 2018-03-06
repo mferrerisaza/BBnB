@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat)
   end
 
   def show
@@ -10,11 +10,13 @@ class BoatsController < ApplicationController
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
+    authorize @boat
     if @boat.save
       redirect_to dashboard_path
     else
@@ -24,11 +26,13 @@ class BoatsController < ApplicationController
 
   def edit
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 
   def update
-   @boat = Boat.find(params[:id])
+    @boat = Boat.find(params[:id])
     @boat.update(boat_params)
+    authorize @boat
     redirect_to dashboard_path
   end
 
