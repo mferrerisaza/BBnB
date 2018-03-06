@@ -5,7 +5,8 @@ def new
 end
 
 def create
-  @boat = Boat.new
+  @boat = Boat.new(boat_params)
+  @boat.user = current_user
   if @boat.save
     redirect_to root_path
   else
@@ -15,6 +16,6 @@ end
 
 
 def boat_params
-  params.require(:boats).permit(:make, :year, :model, :capacity,:location, :boat_type, :price)
+  params.require(:boat).permit(:make, :year, :model, :capacity,:location, :boat_type, :price, :photo)
 end
 end
