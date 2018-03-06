@@ -8,7 +8,7 @@ class BoatsController < ApplicationController
     @boat = Boat.new(boat_params)
     @boat.user = current_user
     if @boat.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class BoatsController < ApplicationController
   def update
     @boat = current_user.boat
     boat.update(boat_params)
-    redirect_to root_path
+    redirect_to dashboard_path
   end
 
   private
