@@ -6,6 +6,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 
   def new
@@ -44,6 +45,7 @@ class BoatsController < ApplicationController
 
     # destroy record
     @boat.destroy
+    flash[:notice] = "Successfully deleted"
 
     # redirect to index
     redirect_to dashboard_path
