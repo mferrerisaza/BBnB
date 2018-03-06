@@ -1,0 +1,14 @@
+<h1>Add a new boat</h1>
+<p>Please fill out the form</p>
+
+<%= simple_form_for(@boat) do |f| %>
+    <%= f.input :make %>
+    <%= f.input :year %>
+    <%= f.input :model %>
+    <%= f.input :capacity %>
+    <%= f.input :location %>
+    <%= f.input :boat_type %>
+    <%= f.input :price %>
+<% end %>
+
+<%= link_to "Back", root_path, class: "btn btn-primary" %>
