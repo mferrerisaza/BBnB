@@ -39,6 +39,7 @@ class BoatsController < ApplicationController
   def destroy
   # fetch boat to destroy from DB
     @boat = Boat.find(params[:id])
+
     authorize @boat
 
     # destroy record
