@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'dashboards#show', as: "dashboard"
   devise_for :users
-  root to: 'pages#home'
+  root to: 'boats#index'
 
   resources :boats, only: [:index, :show, :new, :create, :edit, :update]
 
