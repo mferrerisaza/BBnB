@@ -2,9 +2,18 @@
 p "Seeding"
 
 # User
-User.create!(email: Faker::Internet.email, password:"123456", password_confirmation:"123456")
-User.create!(email: Faker::Internet.email, password:"123456", password_confirmation:"123456")
-User.create!(email: Faker::Internet.email, password:"123456", password_confirmation:"123456")
+
+3.times do
+  u = User.new(
+    email: Faker::Internet.email,
+    password:"123456",
+    password_confirmation:"123456"
+  )
+  u.save!
+  u.profile = Profile.create(name: Faker::ElderScrolls.creature)
+  u.save!
+end
+
 
 # Boats
 10.times do
