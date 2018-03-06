@@ -4,10 +4,10 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def update?
-    user == record.user
+    record.user == user
   end
 
-  def delete?
+  def destroy?
     update?
   end
 
