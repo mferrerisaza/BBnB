@@ -24,6 +24,16 @@ class BoatsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+  # fetch boat to destroy from DB
+    boat = Boat.find(params[:id])
+
+    # destroy record
+    boat.destroy
+
+    # redirect to index
+    redirect_to dashboard_path
+  end
   private
 
   def boat_params
