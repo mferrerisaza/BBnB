@@ -12,8 +12,13 @@
     <p class="more-info">
       <%= link_to "More info", boat_path(b) %>
     </p>
+    <% if policy(b).update? %>
+      <%= link_to edit_boat_path(b) do %>
+        <i class='fa fa-edit'></i>
+      <% end %>
+    <% end %>
     <% if policy(b).destroy? %>
-      <%= link_to boat_path(b), method: :delete do %>
+      <%= link_to boat_path(b), method: :delete, data: { confirm: "Are you sure?"} do %>
         <i class='fa fa-trash'></i>
       <% end %>
     <% end %>
