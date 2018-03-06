@@ -1,8 +1,7 @@
-<ul>
-  <% @user.boats.each do |boat| %>
-    <li>
-      <%= boat.make %>
-    </li>
-    <%= cl_image_tag boat.photo %>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @user.boats.each do |boat| %>
+     <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= render 'shared/boatcard', b: boat %>
+      </div>
+    <% end %>
+  </div>
