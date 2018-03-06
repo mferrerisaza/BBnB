@@ -1,0 +1,8 @@
+<ul>
+  <% @user.boats.each do |boat| %>
+    <li>
+      <%= boat.make %>
+    </li>
+    <%= cl_image_tag boat.photo %>
+  <% end %>
+</ul>
