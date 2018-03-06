@@ -12,7 +12,7 @@
     <p class="more-info">
       <%= link_to "More info", boat_path(b) %>
     </p>
-    <% if policy(Boat).destroy? %>
+    <% if policy(b).destroy? %>
       <%= link_to boat_path(b), method: :delete do %>
         <i class='fa fa-trash'></i>
       <% end %>
