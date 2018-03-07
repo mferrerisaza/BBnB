@@ -3,12 +3,20 @@
 
 .boat-card {
   position: relative;
+  border-radius: 2px;
   height: 300px;
   width: 300px;
   // width: 200px;
   color: grey;
   background-color: grey;
   margin-top: 30px;
+  opacity: 0.9;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out;
+
+    &:hover{
+    transform: scale3d(1.03, 1.03, 1.1);
+      }
 
 
     .boat-description {
