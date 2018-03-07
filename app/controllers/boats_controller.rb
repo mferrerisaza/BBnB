@@ -1,7 +1,13 @@
 class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @boats = policy_scope(Boat)
+    @boats = policy_scope(Boat).where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def show
