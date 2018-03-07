@@ -18,6 +18,7 @@
     </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_pack_tag "application" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_FRONTEND_API']}" %>
     <%= javascript_pack_tag "map" %>
   </body>
