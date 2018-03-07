@@ -4,7 +4,7 @@
   background-color: $darker-gray;
   box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
-  width: 20vw;
+  width: 14vw;
   color: $gray;
   margin-top: 0px;
   p{
@@ -24,3 +24,10 @@
   text-decoration:underline $blue;
 
 }
+
+@media(max-width: 991px) {
+  .dashboard-sidebar {
+    display: none;
+  }
+}
+
