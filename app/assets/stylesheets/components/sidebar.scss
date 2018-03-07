@@ -1,0 +1,26 @@
+.dashboard-sidebar {
+  position: sticky !important;
+  padding: 73px 0;
+  background-color: $darker-gray;
+  box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  width: 20vw;
+  color: $gray;
+  margin-top: 0px;
+  p{
+    margin: 0px;
+    text-align: center;
+    padding: 8px 10px;
+  }
+  p:hover {
+    color: white;
+  }
+}
+
+.active {
+  width: 100%;
+  color: $gray;
+  font-weight: bold;
+  text-decoration:underline $blue;
+
+}
