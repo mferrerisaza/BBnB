@@ -4,19 +4,29 @@
     <div class="textbox">
       <h1><%= @boat.make %></h1>
       <p><%= @boat.user.profile.nil? ? "" : "Owner: #{@boat.user.profile.name}" %></p>
-      <ul>
-        <li>Model: <%= @boat.model %></li>
-        <li>Type: <%= @boat.boat_type %></li>
-        <li>Capacity (people): <%= @boat.capacity %></li>
-        <li>Registration Year: <%= @boat.year %></li>
-        <li>Location: <%= @boat.location %></li>
-        <li>Price per day (€): <%= @boat.price %></li>
-      </ul>
     </div>
 
-    <div>
+    <div class="image-box">
       <img id="boat-pic" src="<%= @boat.photo %>" alt="Your boat">
     </div>
 
+  </div>
+  <div class="infobox">
+    <div class="description">
+      <p>
+        Beautiful <%= @boat.boat_type %> boat anchored in <%= @boat.location %>.
+        Lovingly presented to you by <%= @boat.user.profile.name %>.
+      </p>
+    </div>
+    <ul class="nodots">
+        <li><i class="fas fa-angle-right"></i> Model: <%= @boat.model %></li>
+        <li><i class="fas fa-angle-right"></i> Type: <%= @boat.boat_type %></li>
+        <li><i class="fas fa-angle-right"></i> Capacity (people): <%= @boat.capacity %></li>
+    </ul>
+    <ul class="nodots">
+      <li><i class="fas fa-angle-right"></i> Registration Year: <%= @boat.year %></li>
+      <li><i class="fas fa-angle-right"></i> Location: <%= @boat.location %></li>
+      <li><i class="fas fa-angle-right"></i> Price per day (€): <%= @boat.price %></li>
+    </ul>
   </div>
 </div>

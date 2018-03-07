@@ -15,6 +15,9 @@ p "Seeding"
 end
 
 
+#in case you guys need to create one in the console, copy paste:
+# b = Boat.new( make: "BV", model:"yo", boat_type:"sail", capacity: 10, year: 1992, location: "Cartagena, Colombia", price: 155)
+
 # Boats
 10.times do
 
