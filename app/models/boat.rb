@@ -1,4 +1,6 @@
 class Boat < ApplicationRecord
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
   mount_uploader :photo, PhotoUploader
   BOAT_TYPE_OPTIONS = ["Power", "Sail"]
   YEAR_OPTIONS = 1880..2020
