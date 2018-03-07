@@ -15,7 +15,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= photo_or_generic(current_user.profile) %>
+          <%= profile_photo_or_generic(current_user) %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to dashboard_path do %>
