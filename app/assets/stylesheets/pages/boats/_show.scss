@@ -43,6 +43,15 @@
   padding: 20px
 }
 
+
+.wrapper {
+  min-height: calc(100vh - 200px);
+}
+
+.wrapper2 {
+  min-height: calc(100vh - 170px);
+}
+
 .description {
   width: 29% !important;
   float: left !important;
@@ -55,10 +64,4 @@
 .fas {
   color: #EE5F5B;
 }
-
-
-
-
-
-
 
