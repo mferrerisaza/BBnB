@@ -5,7 +5,7 @@ class Boat < ApplicationRecord
 
   belongs_to :user
   has_many :bookings
-  validates :make, :model, :capacity, :location, :price, :boat_type, :year, :photo, presence:true
+  validates :make, :model, :capacity, :location, :price, :boat_type, :year, presence: true
   validates :boat_type, inclusion: { in: BOAT_TYPE_OPTIONS , message: "Select one of the list" }
   validates :year, inclusion: { in: YEAR_OPTIONS , message: "Select one of the list" }
   validates :capacity, :price, numericality: { greater_than: 0 }
