@@ -1,7 +1,21 @@
-  <div class="row">
-    <% @user.boats.each do |boat| %>
-     <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= render 'shared/boatcard', b: boat %>
-      </div>
-    <% end %>
+<div class="dashboard">
+  <div class="dashboard-sidebar">
+    <p class="active">Your Boats</p>
+    <p>Booking</p>
+    <p>Profile</p>
   </div>
+
+<div class="boat-cards-container">
+  <h1>Your published boats</h1>
+  <div class="container">
+    <div class="row">
+      <% @user.boats.each do |boat| %>
+       <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= render 'shared/boatcard', b: boat %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+</div>
