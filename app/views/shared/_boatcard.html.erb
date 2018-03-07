@@ -19,7 +19,7 @@
     <% end %>
     <% if policy(b).destroy? %>
       <%= link_to boat_path(b), method: :delete, data: { confirm: "Are you sure?"} do %>
-        <i class='fa fa-trash'></i>
+        <i class='fas fa-trash-alt'></i>
       <% end %>
     <% end %>
   </div>
