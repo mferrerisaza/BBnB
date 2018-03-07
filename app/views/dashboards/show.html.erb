@@ -1,8 +1,15 @@
-<div class="wrapper">
-  <div class="container">
+<div class="dashboard">
+  <div class="dashboard-sidebar">
+    <p class="active">Your Boats</p>
+    <p>Booking</p>
+    <p>Profile</p>
+  </div>
+
+  <div class="boat-cards-container">
+  <h1>Your published boats</h1>
     <div class="row">
       <% @user.boats.each do |boat| %>
-       <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="col-xs-10 col-xs-offset-2 col-sm-5 col-sm-offset-1 col-md-5 col-md-offset-1">
         <%= render 'shared/boatcard', b: boat %>
         </div>
       <% end %>
