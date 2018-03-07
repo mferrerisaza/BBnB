@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_one :profile
+  delegate :name, to: :profile
+  delegate :photo, to: :profile
+
   has_many :boats, dependent: :destroy
   has_many :bookings
   has_many :booked_boats, through: :bookings, source: :boat
