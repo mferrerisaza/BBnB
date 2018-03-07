@@ -1,16 +1,64 @@
 
 #boat-pic {
-  width:500px;
   border-radius:4px;
+  width: 100% !important;
+  height: 100% !important;
+
 }
 
 .outsidebox {
   display: flex;
-  margin-top: 20px;
+}
+
+.container {
+  width: 95%;
 }
 
 .textbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  flex-direction:column;
   background-color: white;
   padding: 20px;
-  width: 500px;
+  width: 33.33333333333333% !important;
+  float: left !important;
+  text-align: center;
 }
+
+.image-box {
+  width: 66.66666666% !important;
+  float: left !important;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.infobox {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px
+}
+
+.description {
+  width: 29% !important;
+  float: left !important;
+}
+
+.nodots {
+  list-style: none;
+}
+
+.fas {
+  color: #EE5F5B;
+}
+
+
+
+
+
+
+

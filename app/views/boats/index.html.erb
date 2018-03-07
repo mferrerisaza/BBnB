@@ -1,39 +1,16 @@
-
-
-  <div class="maincontainer">
-    <div class="container">
-       <h1>Boats</h1>
-      <div class="cards-container">
-        <div class="row">
-          <% @boats.each do |b| %>
-              <div class="col-xs-12 col-sm-6 col-md-6">
-                <%= render "shared/boatcard", b: b  %>
-              </div>
-          <% end %>
-        </div>
+<div class="maincontainer">
+  <div class="container">
+     <h1>Boats</h1>
+    <div class="cards-container">
+      <div class="row">
+        <% @boats.each do |b| %>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <%= render "shared/boatcard", b: b  %>
+            </div>
+        <% end %>
       </div>
     </div>
-    <div id="map"></div>
   </div>
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
+</div>
 
-
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-  <script type="text/javascript">
-  var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
-
-  var myOptions = {
-    zoom: 16,
-    center: myLatlng,
-    scrollwheel: false,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    styles: [] // TODO: replace [] with an array from https://snazzymaps.com/
-  };
-
-  var map = new google.maps.Map(document.getElementById('map'), myOptions);
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    title: "You are here!"
-  });
-  </script>
