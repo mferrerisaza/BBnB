@@ -1,5 +1,5 @@
 <div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-  url('<%= cl_image_path b.photo, height: 300, width: 300, crop: :fill %>')">
+  url('<%= photo_or_generic(b) %>')">
   <div class="boat-description">
     <h3 class="boat-card-header"><%= link_to b.make, boat_path(b) %></h3>
     <p><%= b.model %></p>
