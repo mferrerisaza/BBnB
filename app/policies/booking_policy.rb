@@ -4,6 +4,10 @@ class BookingPolicy < ApplicationPolicy
     record.boat.user != user
   end
 
+  def update?
+    record.boat.user != user
+  end
+
   class Scope < Scope
     def resolve
       scope
