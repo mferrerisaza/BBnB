@@ -1,26 +1,22 @@
-<div class="boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.1)),
-  url('<%= photo_or_generic(b) %>')">
-  <div class="boat-description">
-    <h3 class="boat-card-header"><%= link_to b.make, boat_path(b) %></h3>
-    <p><%= b.model %></p>
-    <i class="fas fa-user"></i>
-    <span class="capacity"><%= b.capacity %></span>
-    <i class="fas fa-dollar-sign"></i>
-    <span class="price"><%= b.price %></span>
+<%= link_to boat_path(b) do %>
+  <div class="boat-card" style="background-image: url('<%= photo_or_generic(b) %>')">
+    <%= card_photo_or_generic(b.user) %>
+    <div class="boat-description">
+      <h3>
+        <i class="fas fa-dollar-sign"></i>
+        <%= b.price %>
+      </h3>
+      <p>Per day</p>
+    </div>
+    <div class="card-footer">
+      <div class="card-footer-capacity ">
+        <i class="fas fa-user"></i>
+        <span class="capacity"><%= b.capacity %></span>
+      </div>
+      <div class="card-footer-description">
+        <h5><%= b.make %></h5>
+        <p><%= b.model %></p>
+      </div>
+    </div>
   </div>
-  <div class="card-footer">
-    <p class="more-info">
-      <%= link_to "More info", boat_path(b) %>
-    </p>
-    <% if policy(b).update? %>
-      <%= link_to edit_boat_path(b) do %>
-        <i class='fa fa-edit'></i>
-      <% end %>
-    <% end %>
-    <% if policy(b).destroy? %>
-      <%= link_to boat_path(b), method: :delete, data: { confirm: "Are you sure?"} do %>
-        <i class='fas fa-trash-alt'></i>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<% end %>

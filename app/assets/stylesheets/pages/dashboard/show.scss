@@ -1,13 +1,18 @@
 .dashboard {
-  padding-top: 0px;
+  position: relative;
+  top: 70px;
+  height: 100%;
+  width: 100%;
   display: flex;
+  margin-bottom: 72px;
+
 }
 
 .boat-cards-container{
-  padding: 0px 64px;
-  height: 90vh;
+  justify: center;
+  height: 100%;
   width: 80vw;
-  margin-top: 0px;
+  margin-bottom: 10px;
   h1 {
     padding-top:16px;
     text-align: center;

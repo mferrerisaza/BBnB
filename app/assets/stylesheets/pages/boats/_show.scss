@@ -1,44 +1,52 @@
 
-#boat-pic {
-  border-radius:4px;
-  width: 100% !important;
-  height: 100% !important;
+// #boat-pic {
+//   border-radius:4px;
+//   width: 100% !important;
+//   height: 100% !important;
 
-}
+// }
 
-.outsidebox {
-  display: flex;
-}
-
-.container {
-  width: 95%;
+.main-container {
+  position: relative;
+  top: 80px;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 91px;
 }
 
 .textbox {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
   align-items: center;
   flex-direction:column;
   background-color: white;
   padding: 20px;
-  width: 33.33333333333333% !important;
+  width: 100%;
   float: left !important;
   text-align: center;
 }
 
 .image-box {
-  width: 66.66666666% !important;
-  float: left !important;
-  margin-left: 20px;
-  margin-top: 20px;
+  border-radius: 4px;
+  margin-left: 8px;
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 3;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .infobox {
+  grid-row: 2 / span 2;
+  grid-column: 1 / span 3;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 20px;
+  margin-top: 8px;
   background-color: white;
   padding: 20px
 }
@@ -61,7 +69,12 @@
   list-style: none;
 }
 
-.fas {
-  color: #EE5F5B;
+.fa-angle-right {
+  color: $blue;
 }
 
+@media(max-width: 768px ) {
+  .main-container {
+
+  }
+}
