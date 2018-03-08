@@ -3,6 +3,9 @@
 * ------------------------------------- */
 
 .alert {
+  position: relative;
+  top: 70px;
+  z-index: 1;
   margin: 0;
   text-align: center;
   color: white;
