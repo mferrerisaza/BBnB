@@ -1,8 +1,8 @@
 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content content-modal">
             <div class="modal-header text-center">
-              <!-- I chose to put @boat.make for simplicity, but in the long term it should be replaced by a code block for us to choose between name or make -->
+              <!-- IMPORTANT: I chose to put @boat.make for simplicity, but in the long term it should be replaced by a code block for us to choose between name or make -->
                 <h4 class="modal-title w-100 font-weight-bold">Book <%= @boat.make %></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -14,27 +14,6 @@
                 <%= f.input :description %>
                 <%= f.submit class: "btn btn-primary" %>
             <% end %>
-
-            <!-- <div class="modal-body mx-3">
-                <div class="md-form mb-5">
-                    <i class="fa fa-calendar prefix grey-text"></i>
-                    <label data-error="wrong" data-success="right" for="form34">From:</label>
-                    <input type="date" id="form34" class="form-control validate">
-                </div>
-
-                <div class="md-form mb-5">
-                    <i class="fa fa-calendar"></i>
-                    <label data-error="wrong" data-success="right" for="form29">To:</label>
-                    <input type="date" id="form34" class="form-control validate">
-                </div>
-
-                <div class="md-form">
-                    <i class="fa fa-pencil prefix grey-text"></i>
-                    <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
-                    <label data-error="wrong" data-success="right" for="form8">Your message</label>
-                </div>
-
-            </div> -->
         </div>
     </div>
 </div>
