@@ -58,7 +58,7 @@
   font-weight: bold;
 }
 .status.accepted {
-  color: #04A366;
+  color: green;
 }
 .status.declined {
   color: red;
@@ -76,4 +76,21 @@
     display:block;
     text-align: center;
   }
+}
+
+form .no-style {
+  background: none;
+  box-shadow: none;
+  border: none;
+  color: gray;
+
+}
+.green:hover{
+    color: green;
+  }
+.red:hover {
+    color: red;
+  }
+.message-status-update {
+  display: flex;
 }
