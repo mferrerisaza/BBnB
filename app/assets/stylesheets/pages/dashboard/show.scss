@@ -11,7 +11,7 @@
 .boat-cards-container{
   justify: center;
   height: 100%;
-  width: 80vw;
+  width: 100%;
   margin-bottom: 10px;
   h1 {
     padding-top:16px;
@@ -19,4 +19,34 @@
   }
 
 }
+.bookings-container{
+  justify: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+  h1 {
+    padding-top:16px;
+    text-align: center;
+  }
 
+}
+.section-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  .profile-form-container {
+    margin: 100px;
+    background-color: white;
+    padding: 24px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+    .right-end {
+      float: right;
+    }
+  }
+}
+ .non-visible {
+  display: none;
+ }
