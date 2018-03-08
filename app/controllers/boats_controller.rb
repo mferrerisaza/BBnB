@@ -8,6 +8,7 @@ class BoatsController < ApplicationController
         lng: boat.longitude
       }
     end
+    @boats = filter_boats_by_name_and_dates
   end
 
   def show
@@ -59,6 +60,30 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:make, :year, :model, :capacity,:location, :boat_type, :price, :photo)
+    params.require(:boat).permit(:make, :year, :model, :capacity, :location, :boat_type, :price, :photo)
+  end
+
+  def filter_boats_by_name_and_dates
+    named = params[:query]
+    starts = params[:start_date]
+    ends = params[:start_date]
+
+    if named.present? && starts.blank? && ends.blank?
+      Boat.search_by_attributes(named)
+    elsif named.present? && starts.present? && ends.present?
+      sql = "(bookings.start_date, bookings.end_date) OVERLAPS (:start, :end)"
+      unavailable = Boat.search_by_attributes(named)
+                        .joins(:bookings)
+                        .where(sql, start: starts, end: ends)
+      unavailable_ids = unavailable.pluck(:id)
+      Boat.search_by_attributes(named).where.not(id: unavailable_ids)
+    elsif named.blank? && starts.present? && ends.present?
+      unavailable = Boat.joins(:bookings)
+                        .where(sql, start: starts, end: ends)
+      unavailable_ids = unavailable.pluck(:id)
+      Boat.where.not(id: unavailable_ids)
+    else
+      Boat.all
+    end
   end
 end
