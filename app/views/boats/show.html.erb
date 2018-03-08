@@ -1,7 +1,8 @@
 <div class="container">
   <div class="main-container">
     <div class="textbox">
-      <h1><%= @boat.make %></h1>
+      <h1><%= @boat.name.nil? ? "" : @boat.name %></h1>
+      <h3><%= @boat.make %></h3>
       <p><%= @boat.user.profile.nil? ? "" : "Owner: #{@boat.user.profile.name}" %></p>
       <div>
         <% if policy(@boat).update? %>
