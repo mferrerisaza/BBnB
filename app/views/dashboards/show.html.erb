@@ -15,15 +15,15 @@
     <div  id="Requests" class="boat-cards-container visible">
       <div class="messages-container">
         <% @user.boats.each do |boat| %>
-          <% boat.bookings.each do |booking| %>
-            <%= render 'shared/message', booking: booking %>
+          <% boat.bookings.order(:created_at).each do |booking| %>
+            <%= render 'shared/message-owner', booking: booking %>
           <% end %>
         <% end %>
       </div>
     </div>
     <div id="Bookings" class="bookings-container non-visible">
       <div class="messages-container">
-        <% @user.bookings.each do |booking| %>
+        <% @user.bookings.reverse.each do |booking| %>
           <%= render 'shared/message', booking: booking %>
         <% end %>
       </div>
