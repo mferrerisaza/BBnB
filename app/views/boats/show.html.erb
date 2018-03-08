@@ -6,7 +6,7 @@
       <p><%= @boat.user.profile.nil? ? "" : "Owner: #{@boat.user.profile.name}" %></p>
       <% unless @boat.user == current_user %>
         <div class="text-center">
-          <a href="" class="btn btn-primary mb-4" data-toggle="modal" data-target="#modalContactForm">Book</a>
+          <a href="" class="btn-bbnb mb-4" data-toggle="modal" data-target="#modalContactForm">Book</a>
         </div>
       <% end %>
       <div>
