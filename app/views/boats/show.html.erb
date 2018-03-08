@@ -4,6 +4,11 @@
       <h1><%= @boat.name.nil? ? "" : @boat.name %></h1>
       <h3><%= @boat.make %></h3>
       <p><%= @boat.user.profile.nil? ? "" : "Owner: #{@boat.user.profile.name}" %></p>
+      <% unless @boat.user == current_user %>
+        <div class="text-center">
+          <a href="" class="btn btn-primary mb-4" data-toggle="modal" data-target="#modalContactForm">Book</a>
+        </div>
+      <% end %>
       <div>
         <% if policy(@boat).update? %>
           <%= link_to edit_boat_path(@boat) do %>
@@ -20,6 +25,7 @@
 
     <div class="image-box" style="background-image: url('<%= photo_or_generic(@boat) %>')">
     </div>
+
     <div class="infobox">
       <div class="description">
         <p>
@@ -40,3 +46,8 @@
     </div>
   </div>
 </div>
+
+<%= render 'bookings/new' %>
+
+
+
