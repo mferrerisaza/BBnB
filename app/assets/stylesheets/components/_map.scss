@@ -1,6 +1,8 @@
 #map {
   width: 30vw;
-  height: 90vh;
+  height: 95vh;
   position: sticky !important;
   top: 0 !important;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
 }

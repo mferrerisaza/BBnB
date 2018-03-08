@@ -1,5 +1,6 @@
 .dashboard-sidebar {
   position: sticky !important;
+  top: 0 !important;
   padding: 73px 0;
   background-color: $darker-gray;
   box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.1);
@@ -19,7 +20,7 @@
 
 .active {
   width: 100%;
-  color: $gray;
+  color: white;
   font-weight: bold;
   text-decoration:underline $blue;
 
@@ -28,6 +29,14 @@
 @media(max-width: 991px) {
   .dashboard-sidebar {
     display: none;
+  }
+  .dashboard{
+    display:flex;
+    justify-content:center;
+  }
+  .boat-cards-container{
+    width: 100%;
+    padding: 0px 0px;
   }
 }
 

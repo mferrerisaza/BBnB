@@ -1,11 +1,23 @@
 .maincontainer{
   height: 100%;
   width: 100%;
+  position: relative;
+  top: 70px;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
+  padding: 10px;
+
 }
 
 .cards-container {
   width: 70vw;
+  margin-bottom: 80px;
+  padding-right: 32px;
+  padding-left: 22px;
 }
 
+@media(max-width: 768px ) {
+  #map {
+    display: none;
+  }
+}

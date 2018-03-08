@@ -1,32 +1,41 @@
 <div class="container">
-  <div class="outsidebox">
-
+  <div class="main-container">
     <div class="textbox">
       <h1><%= @boat.make %></h1>
       <p><%= @boat.user.profile.nil? ? "" : "Owner: #{@boat.user.profile.name}" %></p>
+      <div>
+        <% if policy(@boat).update? %>
+          <%= link_to edit_boat_path(@boat) do %>
+            <i class='fa fa-edit'></i>
+          <% end %>
+        <% end %>
+        <% if policy(@boat).destroy? %>
+          <%= link_to boat_path(@boat), method: :delete, data: { confirm: "Are you sure?"} do %>
+             <i class='fas fa-trash-alt'></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
 
-    <div class="image-box">
-      <img id="boat-pic" src="<%= @boat.photo %>" alt="Your boat">
+    <div class="image-box" style="background-image: url('<%= photo_or_generic(@boat) %>')">
     </div>
-
-  </div>
-  <div class="infobox">
-    <div class="description">
-      <p>
-        Beautiful <%= @boat.boat_type %> boat anchored in <%= @boat.location %>.
-        Lovingly presented to you by <%= @boat.user.profile.name %>.
-      </p>
+    <div class="infobox">
+      <div class="description">
+        <p>
+          Beautiful <%= @boat.boat_type %> boat anchored in <%= @boat.location %>.
+          Lovingly presented to you by <%= @boat.user.profile.name %>.
+        </p>
+      </div>
+      <ul class="nodots">
+          <li><i class="fas fa-angle-right"></i> Model: <%= @boat.model %></li>
+          <li><i class="fas fa-angle-right"></i> Type: <%= @boat.boat_type %></li>
+          <li><i class="fas fa-angle-right"></i> Capacity (people): <%= @boat.capacity %></li>
+      </ul>
+      <ul class="nodots">
+        <li><i class="fas fa-angle-right"></i> Registration Year: <%= @boat.year %></li>
+        <li><i class="fas fa-angle-right"></i> Location: <%= @boat.location %></li>
+        <li><i class="fas fa-angle-right"></i> Price per day (€): <%= @boat.price %></li>
+      </ul>
     </div>
-    <ul class="nodots">
-        <li><i class="fas fa-angle-right"></i> Model: <%= @boat.model %></li>
-        <li><i class="fas fa-angle-right"></i> Type: <%= @boat.boat_type %></li>
-        <li><i class="fas fa-angle-right"></i> Capacity (people): <%= @boat.capacity %></li>
-    </ul>
-    <ul class="nodots">
-      <li><i class="fas fa-angle-right"></i> Registration Year: <%= @boat.year %></li>
-      <li><i class="fas fa-angle-right"></i> Location: <%= @boat.location %></li>
-      <li><i class="fas fa-angle-right"></i> Price per day (€): <%= @boat.price %></li>
-    </ul>
   </div>
 </div>
