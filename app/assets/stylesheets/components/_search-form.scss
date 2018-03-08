@@ -1,0 +1,36 @@
+.center-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  // margin-top: 70px;
+}
+
+.boat-search-form {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  * {
+    margin-left: 10px;
+  }
+}
+
+.datesize {
+  // width: 100px !important;
+  // flex-grow: 1;
+}
+
+.queryinput {
+  // width: 50% !important;
+  // min-width: 200px !important;
+  flex: 2;
+}
+
+// @media (max-width: 1000px) {
+
+//   .datesize {
+//     width: 100px;
+//   }
+
+// }
