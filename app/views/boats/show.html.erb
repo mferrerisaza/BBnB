@@ -23,7 +23,7 @@
       <div class="description">
         <p>
           Beautiful <%= @boat.boat_type %> boat anchored in <%= @boat.location %>.
-          Lovingly presented to you by <%= @boat.user.profile.name %>.
+          <%= @boat.user.profile.nil? ? "" : "Lovingly presented to you by #{@boat.user.profile.name}."  %>
         </p>
       </div>
       <ul class="nodots">
