@@ -1,0 +1,15 @@
+.btn-bbnb {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  background: $blue;
+  opacity: 0.9;
+}
+
+.btn-bbnb:hover {
+  opacity: 1;
+  background: $blue;
+  text-decoration: none;
+  color: white;
+}
