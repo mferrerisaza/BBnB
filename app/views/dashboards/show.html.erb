@@ -14,6 +14,11 @@
 
     <div  id="Requests" class="boat-cards-container visible">
       <div class="messages-container">
+        <div class="headers" style="width: 64vw; display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px; margin-left: 28px; margin-right: 28px;">
+          <p>Renters</p>
+          <p>Booking info</p>
+          <p>Status</p>
+        </div>
         <% @user.boats.each do |boat| %>
           <% boat.bookings.order(id: :desc).each do |booking| %>
             <%= render 'shared/message-owner', booking: booking %>
@@ -23,6 +28,11 @@
     </div>
     <div id="Bookings" class="bookings-container non-visible">
       <div class="messages-container">
+        <div class="headers" style="width: 64vw; display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px; margin-left: 28px; margin-right: 28px;">
+          <p>Boat Owners</p>
+          <p>Booking info</p>
+          <p>Status</p>
+        </div>
         <% @user.bookings.order(id: :desc).each do |booking| %>
           <%= render 'shared/message', booking: booking %>
         <% end %>
