@@ -11,7 +11,7 @@ module ApplicationHelper
     if user.profile.nil? || user.profile.photo.blank?
       cl_image_tag "facebook-profile-picture-no-pic-avatar.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"
     else
-      cl_image_path user.profile.photo, height: 393, width: 300, crop: :fill
+      cl_image_tag user.profile.photo, height: 393, width: 300, crop: :fill ,gravity: :face, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown"
     end
   end
 
@@ -19,7 +19,15 @@ module ApplicationHelper
     if user.profile.nil? || user.profile.photo.blank?
       cl_image_tag "facebook-profile-picture-no-pic-avatar.jpg",class: "card-avatar"
     else
-      cl_image_path user.profile.photo, height: 393, width: 300, crop: :fill, class: "card-avatar"
+      cl_image_tag user.profile.photo, height: 393, width: 300, crop: :fill,gravity: :face, class: "card-avatar"
+    end
+  end
+
+  def message_photo_or_generic(user)
+    if user.profile.nil? || user.profile.photo.blank?
+      cl_image_tag "facebook-profile-picture-no-pic-avatar.jpg",class: "avatar-large"
+    else
+      cl_image_tag user.profile.photo, height: 393, width: 300, crop: :fill,gravity: :face, class: "avatar-large"
     end
   end
 end

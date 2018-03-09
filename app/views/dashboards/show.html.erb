@@ -1,20 +1,40 @@
 <!-- <div class="wrapper"> -->
   <div class="dashboard">
     <div class="dashboard-sidebar">
-      <p class="active">Your Boats</p>
-      <p>Booking</p>
-      <p>Profile</p>
+      <%= link_to "#" do %>
+        <p class="jslink active">Requests</p>
+      <% end %>
+      <%= link_to "#" do %>
+        <p class="jslink">Bookings</p>
+      <% end %>
+      <%= link_to "#" do %>
+        <p class="jslink">Profile</p>
+      <% end %>
     </div>
 
-    <div class="boat-cards-container">
-      <div class="row">
+    <div  id="Requests" class="boat-cards-container visible">
+      <div class="messages-container">
         <% @user.boats.each do |boat| %>
-          <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-5 col-md-offset-1">
-            <%= render 'shared/boatcard', b: boat %>
-          </div>
+          <% boat.bookings.order(id: :desc).each do |booking| %>
+            <%= render 'shared/message-owner', booking: booking %>
+          <% end %>
         <% end %>
       </div>
     </div>
+    <div id="Bookings" class="bookings-container non-visible">
+      <div class="messages-container">
+        <% @user.bookings.order(id: :desc).each do |booking| %>
+          <%= render 'shared/message', booking: booking %>
+        <% end %>
+      </div>
+    </div>
+    <div id="Profile" class="section-container non-visible">
+      <div class="profile-form-container">
+        <%= render 'shared/profile-form' %>
+      </div>
+    </div>
+
+   </div>
   </div>
 <!-- </div> -->
 

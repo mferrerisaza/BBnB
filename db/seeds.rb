@@ -1,18 +1,18 @@
 # Create some Boats using faker
 p "Seeding"
-
+require 'date'
 # User
 
-3.times do
-  u = User.new(
-    email: Faker::Internet.email,
-    password:"123456",
-    password_confirmation:"123456"
-  )
-  u.save!
-  u.profile = Profile.create(name: Faker::ElderScrolls.creature)
-  u.save!
-end
+
+u = User.new( email: "miguef7@gmail.com", password:"123456", password_confirmation:"123456")
+u.profile = Profile.create(name: Faker::ElderScrolls.creature)
+u.save!
+u = User.new( email: "test@test.com", password:"123456", password_confirmation:"123456")
+u.profile = Profile.create(name: Faker::ElderScrolls.creature)
+u.save!
+u = User.new( email: "test@gmail.com", password:"123456", password_confirmation:"123456")
+u.profile = Profile.create(name: Faker::ElderScrolls.creature)
+u.save!
 
 
 #in case you guys need to create one in the console, copy paste:
@@ -36,4 +36,16 @@ end
   b.save!
 end
 
+Boat.all.each do |boat|
+  3.times do
+    booking = Booking.new( start_date: DateTime.now, end_date: DateTime.now + Random.rand(1..20), description: Faker::HarryPotter.quote )
+    user = User.find([1, 2, 3].sample)
+    until user != boat.user
+      user = User.find([1, 2, 3].sample)
+    end
+    booking.user = user
+    boat.bookings << booking
+    booking.save!
+  end
+end
 p "Work done!"
