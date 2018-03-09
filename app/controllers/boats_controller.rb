@@ -1,8 +1,9 @@
 class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @boats = policy_scope(Boat).where.not(latitude: nil, longitude: nil)
+
     @boats = filter_boats_by_name_and_dates
+    @boats = policy_scope(@boats).where.not(latitude: nil, longitude: nil)
     @markers = @boats.map do |boat|
       {
         lat: boat.latitude,
@@ -69,7 +70,7 @@ class BoatsController < ApplicationController
   def filter_boats_by_name_and_dates
     named = params[:query]
     starts = params[:start_date]
-    ends = params[:start_date]
+    ends = params[:end_date]
 
     if named.present? && starts.blank? && ends.blank?
       Boat.search_by_attributes(named)

@@ -9,7 +9,9 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Button to list new boat -->
-    <%= link_to "List my Boat", new_boat_path, class: "btn-bbnb" %>
+
+    <%= link_to "Boats", boats_path, class: "btn-bbnb", style: "margin-right: 5px;"%>
+    <%= link_to "List my Boat", new_boat_path, class: "btn-bbnb-2" %>
 
     <% if user_signed_in? %>
       <!-- Avatar with dropdown menu -->
@@ -56,6 +58,11 @@
         <li>
           <%= link_to new_boat_path do %>
             <i class="fas fa-ship"></i> <%= t(".list_a_boat", default: "List a boat") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to boats_path do %>
+            <i class="fas fa-eye"></i> <%= t(".all_boats", default: "Boats") %>
           <% end %>
         </li>
         <li>
