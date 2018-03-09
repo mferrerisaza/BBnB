@@ -11,25 +11,25 @@ u = User.new( email: "test@test.com", password:"123456", password_confirmation:"
 u.profile = Profile.create(name: "Amber Rose")
 u.save!
 u = User.new( email: "test@gmail.com", password:"123456", password_confirmation:"123456")
-u.profile = Profile.create(name: "Dan Siberry")
+u.profile = Profile.create(name: "Anika Cohen")
 u.save!
 u = User.new( email: "dan@gmail.com", password:"123456", password_confirmation:"123456")
-u.profile = Profile.create(name: "Ollie Senduk")
+u.profile = Profile.create(name: "Dan Siberry")
 u.save!
 u = User.new( email: "ollie@test.com", password:"123456", password_confirmation:"123456")
-u.profile = Profile.create(name: "Andrey Barnov")
+u.profile = Profile.create(name: "Ollie Senduk")
 u.save!
 u = User.new( email: "adrien@gmail.com", password:"123456", password_confirmation:"123456")
-u.profile = Profile.create(name: "Tanja Kohlen")
+u.profile = Profile.create(name: "Adrien Kohlen")
 u.save!
 u = User.new( email: "gus@gmail.com", password:"123456", password_confirmation:"123456")
 u.profile = Profile.create(name: "Gus De Vita")
 u.save!
 u = User.new( email: "andy@test.com", password:"123456", password_confirmation:"123456")
-u.profile = Profile.create(name: "Joscha Koepke")
+u.profile = Profile.create(name: "Andy Barnov")
 u.save!
 u = User.new( email: "ben@gmail.com", password:"123456", password_confirmation:"123456")
-u.profile = Profile.create(name: "George Kettle")
+u.profile = Profile.create(name: "Benoit Arthes")
 u.save!
 
 #in case you guys need to create one in the console, copy paste:
@@ -49,7 +49,7 @@ models = ["F12", "Dolphin F34", "AquaRay 2000", "RT-300", "B Series 100"]
     price: Random.rand(1..10000).to_f
   )
 
-  b.remote_photo_url = "https://images.unsplash.com/17/unsplash_527bf56961712_1.JPG?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9528ac7a9611db52e6df3ec585586886&auto=format&fit=crop&w=800&q=60"
+  b.remote_photo_url = "https://images.unsplash.com/photo-1503634192480-e77a6436f075?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=192df6aa12e5def611abd86cf28c61de&auto=format&fit=crop&w=750&q=80"
   b.user = User.find([1, 2, 3].sample)
   b.save!
 
