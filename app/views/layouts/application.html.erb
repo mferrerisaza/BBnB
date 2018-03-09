@@ -14,8 +14,8 @@
   <body>
   <% if controller_name != "pages" %>
     <%= render 'shared/navbar' %>
-  <% end %>
     <%= render 'shared/flashes' %>
+  <% end %>
       <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag "application" %>
