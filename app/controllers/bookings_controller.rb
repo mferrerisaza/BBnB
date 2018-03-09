@@ -22,9 +22,15 @@ class BookingsController < ApplicationController
     @booking.status = bookings_params[:status]
     authorize @booking.boat
     if @booking.save
-      redirect_to dashboard_path
+      respond_to do |format|
+        format.html {redirect_to dashboard_path}
+        format.js
+      end
     else
-      render 'dashboard/show'
+      respond_to do |format|
+        format.html {render 'dashboard/show'}
+        format.js
+      end
     end
   end
 

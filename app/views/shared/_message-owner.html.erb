@@ -14,16 +14,16 @@
 
   <div class="message-status">
     <div class="message-status-update">
-      <%= simple_form_for(booking) do |f| %>
+      <%= simple_form_for(booking, remote: true) do |f| %>
           <%= f.input :status, as: :hidden ,input_html: { value: "Accepted"} %>
           <button type="submit" class="no-style green"><i class='fas fa-check-circle'></i></button>
       <% end %>
-      <%= simple_form_for(booking) do |f| %>
+      <%= simple_form_for(booking, remote: true) do |f| %>
           <%= f.input :status, as: :hidden ,input_html: { value: "Declined"} %>
           <button type="submit" class="no-style red"><i class="fas fa-times-circle"></i></button>
       <% end %>
     </div>
-    <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
+    <p class="status <%= booking.status.downcase %>" data-booking-id = <%= booking.id %>><%= booking.status %></p>
     <p class="price"><i class="fas fa-dollar-sign"></i><%= booking.boat.price.to_i %></p>
   </div>
 </div>

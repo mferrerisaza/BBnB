@@ -1,0 +1,10 @@
+function redirectToMyBookings() {
+  const booking = document.querySelector(".close");
+  booking.click();
+}
+
+<% if @booking.errors.any? %>
+<% else %>
+  redirectToMyBookings();
+
+<% end %>
