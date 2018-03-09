@@ -1,5 +1,19 @@
 <div class="banner" id="banner" style="background-image: linear-gradient(45deg, rgba(0,0,0,.2), rgba(0,0,0,0)), url(<%= cl_image_path "janek-holoubek-506313-unsplash.jpg", :width=>1906, :crop=>"scale" %>)">
 <%= render "shared/homepage-navbar" %>
+  <div class="content">
+    <div class="content__container">
+      <p class="content__container__text">
+        Book
+      </p>
+
+      <ul class="content__container__list">
+        <li class="content__container__list__item">yachts !</li>
+        <li class="content__container__list__item">boats !</li>
+        <li class="content__container__list__item">cruises !</li>
+        <li class="content__container__list__item">sailboats !</li>
+      </ul>
+    </div>
+</div>
 </div>
 <div class="subsection first">
     <%= image_tag "sailboat.svg" %>
@@ -81,6 +95,10 @@
   <div class="small-banner quotes">
     <p><i>"Whether I'm planning my monthly trip to Miami or Dubai, I always book my boat in advance."</i></p>
     <p class="signature">-<strong>Ollie Senduk</strong></p>
+    <p><i>"Whether I'm planning my monthly trip to Miami or Dubai, I always book my boat in advance."</i></p>
+    <p class="signature">-<strong>Ollie Senduk</strong></p>
+    <p><i>"Whether I'm planning my monthly trip to Miami or Dubai, I always book my boat in advance."</i></p>
+    <p class="signature">-<strong>Ollie Senduk</strong></p>
   </div>
 </div>
 <div class="subsection">
@@ -88,7 +106,11 @@
   <p>We provide you with the ability to rent your boat.</p>
   <p><%= link_to "Log in", new_user_registration_path %></p>
 </div>
-<div class="section last" style="background-image: linear-gradient(45deg, rgba(0,0,0,.2), rgba(0,0,0,0)), url(<%= cl_image_path "andrew-neel-213136-unsplash.jpg", :width=>1344, :crop=>"scale" %>)"">
+<div class="section last" style="background-image: linear-gradient(45deg, rgba(0,0,0,.6), rgba(0,0,0,0)), url(<%= cl_image_path "andrew-neel-213136-unsplash.jpg", :width=>1344, :crop=>"scale" %>)"">
+  <a href="#banner">
+    <p>Back to top</p>
+    <i class="fas fa-chevron-up"></i>
+  </a>
 </div>
 
 
