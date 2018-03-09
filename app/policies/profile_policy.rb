@@ -1,11 +1,10 @@
-class BookingPolicy < ApplicationPolicy
-
+class ProfilePolicy < ApplicationPolicy
   def create?
-    record.boat.user != user
+    record.user == user
   end
 
   def update?
-    record.boat.user != user
+    create?
   end
 
   class Scope < Scope

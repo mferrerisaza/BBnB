@@ -8,12 +8,14 @@
   width: 14vw;
   color: $gray;
   margin-top: 0px;
-  p{
+  a{
+    text-decoration: none;
+    color: $gray;
     margin: 0px;
     text-align: center;
     padding: 8px 10px;
   }
-  p:hover {
+  a:hover {
     color: white;
   }
 }

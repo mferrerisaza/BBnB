@@ -1,0 +1,97 @@
+.messages-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.message {
+  width: 64vw;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  background-color: white;
+  margin: 5px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.message:last-child {
+  border-bottom: none;
+}
+.message-body {
+  flex-grow: 1;
+}
+.message-name {
+  padding-left: 10px;
+  min-width: 100px;
+}
+.message-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.message-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.message-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.message-body strong{
+  color: $gray;
+}
+.message-body p {
+  margin: 6px 0;
+}
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: green;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: $gray;
+}
+.avatar-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media (max-width: 700px) {
+  .message{
+    display:block;
+    text-align: center;
+  }
+}
+
+form .no-style {
+  background: none;
+  box-shadow: none;
+  border: none;
+  color: gray;
+
+}
+.green:hover{
+    color: green;
+  }
+.red:hover {
+    color: red;
+  }
+.message-status-update {
+  display: flex;
+  justify-content: center;
+}

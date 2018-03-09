@@ -1,0 +1,30 @@
+<div class="message">
+  <%= message_photo_or_generic(booking.user)  %>
+  <div class="message-name">
+    <h3><%= booking.user.profile.name %></h3>
+    <p><%= Date.parse(booking.created_at.to_s) %></p>
+  </div>
+  <div class="message-body">
+    <p><strong><%= booking.boat.make %></strong></p>
+    <p>From: <strong><%= booking.start_date %></strong> To: <strong><%= booking.end_date %></strong></p>
+    <p>
+      <%= booking.description %>
+    </p>
+  </div>
+
+  <div class="message-status">
+    <div class="message-status-update">
+      <%= simple_form_for(booking) do |f| %>
+          <%= f.input :status, as: :hidden ,input_html: { value: "Accepted"} %>
+          <button type="submit" class="no-style green"><i class='fas fa-check-circle'></i></button>
+      <% end %>
+      <%= simple_form_for(booking) do |f| %>
+          <%= f.input :status, as: :hidden ,input_html: { value: "Declined"} %>
+          <button type="submit" class="no-style red"><i class="fas fa-times-circle"></i></button>
+      <% end %>
+    </div>
+    <p class="status <%= booking.status.downcase %>"><%= booking.status %></p>
+    <p class="price"><i class="fas fa-dollar-sign"></i><%= booking.boat.price.to_i %></p>
+  </div>
+</div>
+
