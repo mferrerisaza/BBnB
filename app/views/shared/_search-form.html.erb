@@ -1,0 +1,20 @@
+<div class="center-div">
+  <%= form_tag boats_path, method: :get, class: "form-inline boat-search-form"  do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "queryinput form-control",
+      placeholder: "Search by City, Boat-type, Boat-name..."
+    %>
+    <%= text_field_tag :start_date,
+      params[:start_date],
+      class: "datepicker datesize",
+      placeholder: "Start Date"
+    %>
+    <%= text_field_tag :end_date,
+      params[:end_date],
+      class: "datepicker datesize",
+      placeholder: "End Date"
+    %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+  <% end %>
+</div>
