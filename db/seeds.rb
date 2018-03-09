@@ -182,7 +182,7 @@ models = ["F12", "Dolphin F34", "AquaRay 2000", "RT-300", "B Series 100"]
 
 
 Boat.all.each do |boat|
-  3.times do
+  2.times do
     booking = Booking.new( start_date: DateTime.now, end_date: DateTime.now + Random.rand(1..20), description: Faker::HarryPotter.quote )
     user = User.find([1, 2, 3, 4, 5, 6, 7, 8].sample)
     until user != boat.user
