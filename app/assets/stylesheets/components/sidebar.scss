@@ -1,31 +1,30 @@
 .dashboard-sidebar {
+  border-radius: 4px;
   position: sticky !important;
   top: 0 !important;
   padding: 73px 0;
-  background-color: $darker-gray;
+  background-color: white;
   box-shadow: 2px 0px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
-  width: 14vw;
-  color: $gray;
+  width: 16vw;
+  color: #2F7EA1;
   margin-top: 0px;
   a{
     text-decoration: none;
-    color: $gray;
+    color: #2F7EA1;
     margin: 0px;
     text-align: center;
     padding: 8px 10px;
   }
   a:hover {
-    color: white;
+    color: #E1143E;
   }
 }
 
 .active {
   width: 100%;
-  color: white;
+  color: #2F7EA1;
   font-weight: bold;
-  text-decoration:underline $blue;
-
 }
 
 @media(max-width: 991px) {
