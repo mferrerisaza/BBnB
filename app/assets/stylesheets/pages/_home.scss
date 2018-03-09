@@ -8,6 +8,14 @@
 
 }
 
+
+.title {
+  top: 500px;
+  left: 500px;
+  position: absolute;
+  height: 20%;
+}
+
 svg {
  padding: 20%;
 }
@@ -99,6 +107,17 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+   i {
+    font-size: 30px;
+   }
+   a {
+    text-decoration: none;
+    color: white;
+  }
+
 }
 
 .choices {
