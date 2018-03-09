@@ -1,0 +1,13 @@
+function changeBooking() {
+  const booking = document.querySelector("[data-booking-id='<%=@booking.id%>']");
+  booking.classList.remove("pending");
+  booking.classList.remove("accepted");
+  booking.classList.remove("declined");
+  booking.classList.add("<%= j @booking.status.downcase %>");
+  booking.innerHTML = "<%= j @booking.status %>"
+}
+
+<% if @booking.errors.any? %>
+<% else %>
+  changeBooking();
+<% end %>
