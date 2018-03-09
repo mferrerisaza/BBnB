@@ -8,7 +8,6 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,6 +22,15 @@
     // border: solid black 1.5px;
   }
 }
+
+//when scrolling add:
+.navbar-wagon-white {
+  background-color: rgba(255,255,255,1);
+ .navbar-wagon-link {
+  color: gray;
+ }
+}
+
 
 /* User Avatar */
 .navbar-wagon .avatar {
