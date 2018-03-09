@@ -1,17 +1,28 @@
 // Specific CSS for your home-page
 .banner {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 
+.banner-content {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 .search-form{
-  position: absolute;
-  top: 80%;
-  left: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
 }
 
 
@@ -22,16 +33,16 @@
   height: 20%;
 }
 
-svg {
- padding: 20%;
-}
 .section {
   height: 100vh;
-  width: 100vw;
-  background-color: white;
+  width: 100%;
+  background-vholor: white;
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 
@@ -40,8 +51,8 @@ svg {
   flex-direction: column;
   justify-content: center;
   height: 70vh;
-  width: 100vw;
-  background-color: rgba(255,255,255, 0.6);
+  width: 100%;
+  background-vholor: rgba(255,255,255, 0.6);
   align-items: center;
   padding: 80px;
 }
@@ -61,37 +72,49 @@ svg {
 
 }
 
-  .worldwide {
-    display: flex;
-    flex-direction: column;
-    height: 60%
-  }
+.worldwide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 110px;
+}
 
-  .small-banner {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-    width: 60%;
-    background-color: rgba(255,255,255, 0.95)
-  }
+.small-banner {
+  height: 60%;
+  width: 50% ;
+  background-color: rgba(255,255,255, 0.95)
+}
 
-  .quotes {
-    top: 10%;
-    left: 40%;
-    padding: 5%;
-    color: gray;
-  }
+.quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+  left: 40%;
+  color: gray;
+  text-align: center;
+}
 
-  .location-info {
-    top: 10%;
-  }
+.location-info {
+  top: 10%;
+}
 
-  .locations-section {
-     color: gray;
-  }
+.locations-section {
+   color: gray;
+   height: 100vh;
+   width: 100%;
+   background-vholor: white;
+   background-size: cover;
+   background-position: 50% 50%;
+   background-attachment: fixed;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   p {
+    padding-top: 16px;
+   }
+}
 
 
 .boat-icons {
@@ -133,5 +156,14 @@ svg {
   }
 }
 
-
+@media (max-width: 629px) {
+  .quotes{
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  .quotes{
+    font-size: 12px;
+  }
+}
 

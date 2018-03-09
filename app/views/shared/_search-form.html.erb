@@ -1,20 +1,31 @@
 <div class="center-div">
-  <%= form_tag boats_path, method: :get, class: "form-inline boat-search-form"  do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "queryinput form-control",
-      placeholder: "Search by City, Boat-type, Boat-name..."
-    %>
-    <%= text_field_tag :start_date,
-      params[:start_date],
-      class: "datepicker datesize",
-      placeholder: "Start Date"
-    %>
-    <%= text_field_tag :end_date,
-      params[:end_date],
-      class: "datepicker datesize",
-      placeholder: "End Date"
-    %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-  <% end %>
+  <div class="row">
+    <%= form_tag boats_path, method: :get, class: "boat-search-form"  do %>
+      <div class="col-xs-12">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "queryinput form-control",
+          placeholder: "Search by City, Boat-type, Boat-name..."
+        %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= text_field_tag :start_date,
+          params[:start_date],
+          class: "datepicker datesize",
+          placeholder: "Start Date"
+        %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= text_field_tag :end_date,
+          params[:end_date],
+          class: "datepicker datesize",
+          placeholder: "End Date"
+        %>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <%= submit_tag "Search", name: nil, class: "btn btn-primary full-width-padded" %>
+      </div>
+    <% end %>
+  </div>
 </div>
