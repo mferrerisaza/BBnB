@@ -26,7 +26,7 @@ u.save!
     model:Faker::Date.birthday(18, 65) ,
     boat_type:Boat::BOAT_TYPE_OPTIONS.sample,
     capacity:Random.rand(1..10),
-    year:Random.rand(Boat::YEAR_OPTIONS),
+    year:Random.rand(1930..2018),
     location:["Barcelona","Lisbon", "Cartagena"].sample,
     price: Random.rand(1..10000).to_f
   )
