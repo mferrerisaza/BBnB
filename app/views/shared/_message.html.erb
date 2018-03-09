@@ -1,5 +1,5 @@
 <div class="message">
-  <%= message_photo_or_generic(booking.user)  %>
+  <%= message_photo_or_generic(booking.boat.user)  %>
   <div class="message-name">
     <h3><%= booking.user.profile.name %></h3>
     <p><%= Date.parse(booking.created_at.to_s) %></p>
