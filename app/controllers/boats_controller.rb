@@ -12,6 +12,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @booking = Booking.new
     authorize @boat
   end
 
@@ -56,6 +57,7 @@ class BoatsController < ApplicationController
     # redirect to index
     redirect_to dashboard_path
   end
+
   private
 
   def boat_params
