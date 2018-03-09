@@ -3,13 +3,29 @@
   padding: 10px 15px;
   border-radius: 7px;
   font-weight: bold;
-  background: $blue;
+  background: #10709A;
   opacity: 0.9;
 }
 
 .btn-bbnb:hover {
   opacity: 1;
-  background: $blue;
+  background: #10709A;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-bbnb-2 {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  background: #E1143E;
+  opacity: 0.9;
+}
+
+.btn-bbnb-2:hover {
+  opacity: 1;
+  background: #E1143E;
   text-decoration: none;
   color: white;
 }
