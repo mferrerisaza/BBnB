@@ -5,7 +5,7 @@
               <!-- IMPORTANT: I chose to put @boat.make for simplicity, but in the long term it should be replaced by a code block for us to choose between name or make -->
                 <h4 class="modal-title w-100 font-weight-bold">Book <%= @boat.make %></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span id="closing-span" aria-hidden="true">&times;</span>
                 </button>
             </div>
             <%= simple_form_for([@boat, @booking]) do |f| %>
