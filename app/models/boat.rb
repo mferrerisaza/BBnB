@@ -12,4 +12,11 @@ class Boat < ApplicationRecord
   validates :year, inclusion: { in: YEAR_OPTIONS , message: "Select one of the list" }
   validates :capacity, :price, numericality: { greater_than: 0 }
 
+
+  include PgSearch
+  pg_search_scope :search_by_attributes,
+    against: [ :make, :model, :boat_type, :capacity, :year, :location, :price],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
