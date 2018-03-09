@@ -9,7 +9,7 @@
               <%= f.input :password, required: false %>
                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-              <%= f.button :submit, "Log in", class: "btn-bbnb" %>
+              <%= f.button :submit, "Log in", class: "btn-bbnb-2", style: "float: right" %>
           <% end %>
 
           <%= render "devise/shared/links" %>
